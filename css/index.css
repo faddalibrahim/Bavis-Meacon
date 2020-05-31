@@ -1,0 +1,195 @@
+/*@import url('../fonts/Roboto-Medium.ttf'); /*deprecated...can only load css files*/
+
+@font-face {
+    font-family: roboto-r;
+    /* src: url('/fonts/Roboto-Regular.ttf'); */
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+*,
+*::before,
+*::after{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root{
+	--bg-color: #111;
+	--linkedIn: #007bb6;
+	--facebook: #3b5998;
+	--twitter: #00aced;
+	--pinterest: #cb2027;
+	--youtube: #bb0000;
+	--instagram: #bc2a8d;
+	--wordpress: #21759b;
+	--myRed: #f44336;
+	--myRed2: #d94631;
+	--pinkRed: #c92432;
+	--canvasRed: #923d41;
+	--myBlue: #1c8adb;
+	--myBluee: #3bbced;
+	--myGreen: #39dc79;
+	--w3Green: #4CAF50;
+	--microsoftGreen: #008272;
+	--dcodeGreen: #009879;
+	--myDark1: #111;
+	--myDark2: #222;
+	--myDark333: #333;
+	--myGrey: #ddd;
+	--lightCharcoal: #727272;
+	--deepCharcoal: #141414;
+	--travisYellow: #FF9800;
+	--travisYellow2: #f88f00;
+	--brightYellow: #ffc600;
+	--nnnYellow: #ffae00;
+	--travisBlue: #2196F3;
+	--udemyBlue: #0f7c90;
+	--travisGreen: #8BC34A;
+	--travisPink: #E91E63;
+	--travisBleu: #009688;
+	--myBlack: rgba(13, 12, 14, 1);
+	--lightenedBlack: #1f1c21;
+	--lightPurple: #302d43;
+	--coolPurple: #533872;
+	--darkPurple: #282639;
+	--neonGreen: #92cf48;
+	--lightGrey: #f4f6f9;
+	--darkGrey: #eaedf3;
+	--deepGrey: #717171;
+	--lighterGrey: #f1f1f1;
+	/* font-size: 20px; */
+}
+
+body{
+	background-color: var(--coolPurple);
+	
+	width: 100vw;
+	height: 100vh;
+	max-height: -webkit-fill-available;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	font-family: roboto-r, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main{
+	background: linear-gradient(45deg, #2826388c, transparent);
+	height: 100vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-evenly;
+	padding: 0 2rem;
+}
+
+main h1{
+	color: #eee;
+	text-align: center;
+}
+
+section{
+	display: flex;
+	justify-content: space-between;
+}
+
+section i, section p, form button{
+	padding: 0.5rem;
+	vertical-align: middle;
+	text-align: center;
+	width: max-content;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	background-color: var(--coolPurple);
+	box-shadow: 0 0.2rem 0.5rem rgba(13, 12, 14, 0.3);
+	color: white;
+	color: var(--myDark2);
+	color: #eee;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+section button:hover{
+	box-shadow: 0 0.5rem 0.5rem rgba(13, 12, 14, 0.2);
+	transform: scale(1.1);
+}
+
+section p{
+	border-radius: 50%;
+}
+
+article{
+	/* background-color: var(--darkPurple); */
+	background-color: #2826396b;
+	color: #eee;
+	padding: 0.5rem 1rem;
+	/* height: 5rem; */
+}
+
+article marquee{
+	visibility: hidden;
+}
+
+form{
+	display: flex;
+	flex-flow: column;
+}
+
+form input{
+	margin-bottom: 1rem;
+	background-color: #2826396b;
+	outline: none;
+	border: none;
+	color: #eee;
+	/* padding: 1rem 0.5rem; */
+	padding: 1.5rem 1rem;
+	font-family: roboto-r;
+	font-size: 1rem;
+	/* height: 15rem; */
+}
+
+form input::placeholder{
+	color: #ccc;
+}
+
+form button{
+	width: 100%;
+}
+
+
+/* Small (sm) devices (landscape phones, 567px and up) */
+@media screen and (min-width: 568px){
+	:root{
+		/* --bg-color: #222; */
+		/* font-size: 22px;  */
+	}
+}
+
+/* Medium (md) devices (tablets, 768px and up) */
+@media screen and (min-width: 768px){
+	:root{
+		/* --bg-color: #333; */
+		/* font-size: 24px; */
+	}
+	main{
+		/* padding: 0 5rem; */
+		width: 40vw;
+	}
+}
+
+/* Large (lg) devices (desktops, 992px and up) */
+@media screen and (min-width: 992px){
+	:root{
+		/* --bg-color: violet; */
+		/* font-size: 30px; */
+	};
+}
+
+/* Extra (xl) devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px){
+	:root{
+		/* --bg-color: violet; */
+		/* font-size: 40px; */
+	};
+}
