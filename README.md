@@ -1,1 +1,1 @@
-![](img/phone_view.png)
+![](img/pphone_view.png)
