@@ -1,9 +1,6 @@
-/*@import url('../fonts/Roboto-Medium.ttf'); /*deprecated...can only load css files*/
-
 @font-face {
     font-family: roboto-r;
-    /* src: url('/fonts/Roboto-Regular.ttf'); */
-    src: url('../fonts/Roboto-Regular.ttf');
+    src: url('/fonts/Roboto-Regular.ttf');
 }
 
 *,
@@ -15,55 +12,15 @@
 }
 
 :root{
-	--bg-color: #111;
-	--linkedIn: #007bb6;
-	--facebook: #3b5998;
-	--twitter: #00aced;
-	--pinterest: #cb2027;
-	--youtube: #bb0000;
-	--instagram: #bc2a8d;
-	--wordpress: #21759b;
-	--myRed: #f44336;
-	--myRed2: #d94631;
-	--pinkRed: #c92432;
-	--canvasRed: #923d41;
-	--myBlue: #1c8adb;
-	--myBluee: #3bbced;
-	--myGreen: #39dc79;
-	--w3Green: #4CAF50;
-	--microsoftGreen: #008272;
-	--dcodeGreen: #009879;
-	--myDark1: #111;
-	--myDark2: #222;
-	--myDark333: #333;
-	--myGrey: #ddd;
-	--lightCharcoal: #727272;
-	--deepCharcoal: #141414;
-	--travisYellow: #FF9800;
-	--travisYellow2: #f88f00;
-	--brightYellow: #ffc600;
-	--nnnYellow: #ffae00;
-	--travisBlue: #2196F3;
-	--udemyBlue: #0f7c90;
-	--travisGreen: #8BC34A;
-	--travisPink: #E91E63;
-	--travisBleu: #009688;
-	--myBlack: rgba(13, 12, 14, 1);
 	--lightenedBlack: #1f1c21;
 	--lightPurple: #302d43;
 	--coolPurple: #533872;
 	--darkPurple: #282639;
-	--neonGreen: #92cf48;
-	--lightGrey: #f4f6f9;
-	--darkGrey: #eaedf3;
-	--deepGrey: #717171;
-	--lighterGrey: #f1f1f1;
-	/* font-size: 20px; */
+	--gray: #eee;
 }
 
 body{
 	background-color: var(--coolPurple);
-	
 	width: 100vw;
 	height: 100vh;
 	max-height: -webkit-fill-available;
@@ -83,17 +40,18 @@ main{
 	padding: 0 2rem;
 }
 
-main h1{
-	color: #eee;
+#app-name{
+	color: var(--gray);
 	text-align: center;
 }
 
-section{
+#controls{
 	display: flex;
 	justify-content: space-between;
 }
 
-section i, section p, form button{
+#controls > *, 
+form button{
 	padding: 0.5rem;
 	vertical-align: middle;
 	text-align: center;
@@ -102,58 +60,63 @@ section i, section p, form button{
 	outline: none;
 	border: none;
 	background-color: var(--coolPurple);
-	box-shadow: 0 0.2rem 0.5rem rgba(13, 12, 14, 0.3);
-	color: white;
-	color: var(--myDark2);
-	color: #eee;
+	box-shadow: 0 0.3rem 0.4rem rgba(13, 12, 14, 0.4);
+	color: var(--gray);
 	font-size: 1rem;
 	cursor: pointer;
+	transition: all 0.1s ease-in;
 }
 
-section button:hover{
-	box-shadow: 0 0.5rem 0.5rem rgba(13, 12, 14, 0.2);
-	transform: scale(1.1);
+#controls > *:hover,
+#form button:hover{
+	box-shadow: 0 0.5rem 0.5rem rgba(13, 12, 14, 0.1);
+	transform: scale(1.07);
 }
 
-section p{
+#controls .count-down{
 	border-radius: 50%;
 }
 
-article{
-	/* background-color: var(--darkPurple); */
+#word-display{
 	background-color: #2826396b;
 	color: #eee;
 	padding: 0.5rem 1rem;
-	/* height: 5rem; */
 }
 
-article marquee{
+#word-display marquee{
 	visibility: hidden;
 }
 
-form{
+#word-display marquee.show{
+	visibility: visible;
+}
+
+#form{
 	display: flex;
 	flex-flow: column;
 }
 
-form input{
+#form .typing-area{
 	margin-bottom: 1rem;
 	background-color: #2826396b;
 	outline: none;
 	border: none;
 	color: #eee;
-	/* padding: 1rem 0.5rem; */
-	padding: 1.5rem 1rem;
+	padding: 1rem;
 	font-family: roboto-r;
 	font-size: 1rem;
-	/* height: 15rem; */
+	border: 0.1rem solid transparent;
 }
 
-form input::placeholder{
+#form .typing-area:focus{
+	border: 0.1rem solid var(--coolPurple);
+}
+
+#form .typing-area::placeholder{
 	color: #ccc;
 }
 
-form button{
+#form button{
 	width: 100%;
 }
 
@@ -174,7 +137,7 @@ form button{
 	}
 	main{
 		/* padding: 0 5rem; */
-		width: 40vw;
+		width: 25vw;
 	}
 }
 
