@@ -1,3 +1,3 @@
-[Click here to visit app here](mavisbeacon.herokuapp.com)
+[Click here to visit app here](https://bavismeacon.herokuapp.com/)
 ![](img/desktop_view.png)
 ![](img/phone_view.png)
