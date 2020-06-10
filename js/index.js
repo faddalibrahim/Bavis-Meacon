@@ -1,7 +1,7 @@
 import { $ } from './binds.js';
 import { changeToPause, changeToPlay, showMarquee, hideMarquee, startTimer, pauseTimer, stopGame} from './functions.js';
 
-const words = ['fola','salma','zainab','khadija','sulaiman'];
+const words = ['This','is','the','beta','version','Adnaced','version','on','its','way'];
 
 
 document.addEventListener('DOMContentLoaded', () => {
