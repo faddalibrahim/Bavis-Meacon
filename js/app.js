@@ -1,6 +1,11 @@
 import BavisMeacon from './BavisMeacon.js';
 import { $, $$, $id } from './binds.js';
 
+if(!navigator.onLine){
+    $('body').innerHTML = `<h1 style="color: white">oops seems like you are offline!!</h1>`;
+    // return;
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     let WORDS;
