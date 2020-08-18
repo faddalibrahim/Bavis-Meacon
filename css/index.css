@@ -51,11 +51,13 @@ main{
 }
 
 #controls > *, 
-form button{
+.button{
 	padding: 0.5rem;
 	vertical-align: middle;
 	text-align: center;
-	width: max-content;
+	/* width: max-content;
+	wid */
+	width: 100%;
 	font-weight: bold;
 	outline: none;
 	border: none;
@@ -66,30 +68,31 @@ form button{
 	cursor: pointer;
 	transition: all 0.1s ease-in;
 	line-height: 1.5rem;
-	margin: 0 0.5rem;
 }
 
+
 #controls > *:hover,
-#form button:hover{
-	box-shadow: 0 0.5rem 0.5rem rgba(13, 12, 14, 0.1);
-	transform: scale(1.07);
+.button:hover{
+	/* box-shadow: 0 0.5rem 0.5rem rgba(13, 12, 14, 0.1); */
+	transform: scale(1.1);
+	/* transform: scale(0.9); */
 }
 
 #controls .count-down{
-	border-radius: 50%;
+	/* border-radius: 50%; */
 }
 
-#word-display{
+#word-stream{
 	background-color: #2826396b;
 	color: #eee;
 	padding: 0.5rem 1rem;
 }
 
-#word-display marquee{
+#word-stream marquee{
 	visibility: hidden;
 }
 
-#word-display marquee.show{
+#word-stream marquee.show{
 	visibility: visible;
 }
 
@@ -108,6 +111,23 @@ form button{
 	font-family: roboto-r;
 	font-size: 1rem;
 	border: 0.1rem solid transparent;
+	/* animation: error 0.25s linear 2; */
+}
+
+@keyframes error {
+	0%{
+		transform: translateX(initial);
+		border-color: red;
+	}
+	30%{
+		transform: translateX(0.5rem)
+	}
+	60%{
+		transform: translateX(-0.5rem)
+	}
+	100%{
+		transform: translateX(initial)
+	}
 }
 
 #form .typing-area:focus{
@@ -120,6 +140,67 @@ form button{
 
 #form button{
 	width: 100%;
+}
+
+#settings{
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: rgba(13, 12, 14, 0.7);
+	color: white;
+	padding: 1rem;
+	/* display: none; */
+	/* height: 0; */
+	transform: translateY(-100%);
+	transition: all 0.25s linear;
+}
+
+#settings:target{
+	/* display: block; */
+	transform: translateY(0%);
+}
+
+#settings article{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: table;
+	width: 20rem;
+	padding: 1rem;
+}
+
+#settings h1{
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+#settings select{
+	background-color: var(--coolPurple);
+	color: white;
+	width: 100%;
+	padding: 0.5rem;
+	border-radius: 0.2rem;
+	outline: none;
+	border-color: transparent;
+	font-size: 1rem;
+}
+
+#settings option{
+	background-color: transparent !important;
+	font-size: 1rem;
+}
+
+#settings div{
+	/* display: table-row; */
+	/* margin-bottom: 1rem; */
+	margin-bottom: 1.5rem;
+}
+
+#settings span, #settings select{
+	display: table-cell;
 }
 
 

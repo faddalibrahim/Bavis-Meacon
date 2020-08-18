@@ -4,4 +4,4 @@ const $ = document.querySelector.bind(document),
       $cs = document.getElementsByClassName.bind(document);
 
 
-export { $ }
+export { $, $$, $id }

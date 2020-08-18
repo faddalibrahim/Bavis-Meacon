@@ -24,20 +24,58 @@
 			<i class="fas fa-play"></i>
 			<i class="fas fa-stop"></i>
 			<i class="fas fa-redo"></i>
-			<i class="fas fa-cog"></i>
-			<i class="far fa-chart-bar"></i>
+			<!-- <i class="far fa-chart-bar"></i> -->
+			<a href="#settings">
+				<i class="fas fa-cog"></i>
+			</a>
 			<p class="count-down">30</p>
 		</section>
 
-		<article id="word-display">
-			<marquee behavior="scroll" direction="right" scrollamount="7">
-				This
-			</marquee>
-		</article>
+		<section id="word-stream">
+			<marquee behavior="scroll" direction="right" scrollamount="10"></marquee>
+		</section>
+
+		<section id="settings">
+			<article>
+				<a href="#" style="text-decoration: none;">
+					<i class="fas fa-times" style="text-align: right; font-size: 1.5rem; color: #b406b4; cursor: pointer; display: block;"></i>
+				</a>
+				<form action="" id="settings-form">
+					<div>
+						<h1>Word Count</h1>
+						<select name="" id="">
+							<option value="30">30</option>
+							<option value="60">60</option>
+							<option value="90">90</option>
+						</select>
+					</div>
+	
+					<div>
+						<h1>Time (in seconds)</h1>
+						<select name="" id="">
+							<option value="30">30</option>
+							<option value="60">60</option>
+							<option value="90">90</option>
+						</select>
+					</div>
+					
+					<div>
+						<h1>Speed</h1>
+						<select name="" id="">
+							<option value="10">basic</option>
+							<option value="20">intermdiate</option>
+							<option value="30">advanced</option>
+						</select>
+					</div>
+	
+					<button type="submit" class="button apply">Apply</button>
+				</form>
+			</article>
+		</section>
 
 		<form autocomplete="off" id="form">
 			<input type="text" placeholder="type here.." required name="typing-area" class="typing-area">
-			<button type="submit">Next</button>
+			<button type="submit" class="button">Next</button>
 		</form>
 		<footer style="text-align: center; color: white;">&copy; Faddal Ibrahim</footer>
 	</main>

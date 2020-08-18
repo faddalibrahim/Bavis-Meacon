@@ -1,61 +1,25 @@
-import { $ } from './binds.js';
-import { changeToPause, changeToPlay, showMarquee, hideMarquee, startTimer, pauseTimer, stopGame} from './functions.js';
-
-const words = ['This','is','the','beta','version','Adnaced','version','on','its','way'];
+import BavisMeacon from './BavisMeacon.js';
+import { $, $$, $id } from './binds.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // const startBtn = $('#controls .fa-play');
-    const timeDisplay = $('#controls .count-down');
-    const controls = $('#controls');
-    const marquee = $('#word-display marquee');
-    const form = $('#form');
-    let wordIndex = 0;
 
-
-    controls.addEventListener('click',function(e){
-        let buttonClicked = e.target.className;
-        switch (buttonClicked) {
-            case 'fas fa-play':
-                changeToPause(e);
-                showMarquee(marquee);
-                startTimer(timeDisplay);
-                break;
-            case 'fas fa-pause':
-                changeToPlay(e);
-                hideMarquee(marquee);
-                pauseTimer();
-                break;
-            case 'fas fa-stop':
-               stopGame(marquee);
-                break;
-            case 'fas fa-redo':
-                // replayGame()
-                break;
-            default:
-                break;
-        }
-    })
-
-   
+    const COUNT_DOWN = $('#controls .count-down'),
+          CONTROLS   = $id('controls'),
+          MARQUEE    = $('#word-stream marquee'),
+          FORM       = $id('form'),
+          SETTINGS_FORM       = $id('settings-form'),
+          WORDS      = ['This', 'is', 'the', 'beta', 'version', 'alpha', 'on', 'its', 'way', 'soon'];
     
-    form.addEventListener('submit',function(e){
-        e.preventDefault();
-       
-        if(wordIndex === words.length - 1){
-            stopGame(marquee)
-            this['typing-area'].value = null;
-            wordIndex = 0;
-            marquee.textContent = words[wordIndex];
-            return;
-        }
+          
+    const newGame = new BavisMeacon(COUNT_DOWN, CONTROLS, MARQUEE, FORM, WORDS, SETTINGS_FORM, $, $$);
+          
+    CONTROLS.addEventListener('click', newGame.action);
+    SETTINGS_FORM.addEventListener('submit', newGame.applySettings);
+    FORM.addEventListener('submit', newGame.nextWord);
 
-        if(this['typing-area'].value === words[wordIndex]){
-            this['typing-area'].value = null;
-            marquee.textContent = words[++wordIndex];
-        }
+    
+   
 
-       
-    })
 
 })

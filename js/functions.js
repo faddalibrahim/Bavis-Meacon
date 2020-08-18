@@ -3,30 +3,6 @@ import { $ } from './binds.js';
 // const words = ['fola','salma','zainab','khadija','sulaiman'];
 
 
-function changeToPause(e){
-    e.target.classList.replace('fa-play','fa-pause');
-}
-
-function changeToPlay(e = $('.fa-stop')){
-    if(e.target){
-        e.target.classList.replace('fa-pause','fa-play');
-        return
-    }
-
-    // if(e.classList.contains('fa-stop')){
-        $('.fa-pause').classList.replace('fa-pause','fa-play');
-        // return;
-    // }
-}
-
-function showMarquee(marquee){
-    marquee.classList.toggle('show');
-}
-
-function hideMarquee(marquee){
-    marquee.classList.toggle('show');
-}
-
 let timeKeeper;
 
 let decumulator = (() => {
